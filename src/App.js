@@ -19,7 +19,7 @@ function App(){
 
   useEffect(() =>{
     getRecipes();
-  }, [query, getRecipes]);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
+  }, []);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
 
 
 
