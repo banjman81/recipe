@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 import Recipe from './Recipe';
 
@@ -9,7 +9,7 @@ function App(){
   const [recipes, setrecipes] = useState([])
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('chicken')
-  
+
   async function getRecipes(){
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
@@ -19,7 +19,7 @@ function App(){
 
   useEffect(() =>{
     getRecipes();
-  }, [query]);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
+  }, [query, recipes]);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
 
 
 
