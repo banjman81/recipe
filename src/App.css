@@ -42,6 +42,9 @@
 .ing-list{
   list-style-type: none;
 }
+.header{
+  margin: 0;
+}
 
 @keyframes App-logo-spin {
   from {
