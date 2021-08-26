@@ -1,4 +1,4 @@
-import Ract from  'react';
+import React from  'react';
 
 function Recipe(props){ // props can also be named individually by deconstructing it
     return(
