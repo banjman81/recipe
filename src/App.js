@@ -6,20 +6,20 @@ function App(){
   const APP_ID = process.env.REACT_APP_APP_ID;
   const APP_KEY= process.env.REACT_APP_APP_KEY;
 
-  const [recipes, setrecipes] = useState([])
+  const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('chicken')
 
   async function getRecipes(){
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
-    setrecipes(data.hits);
+    setRecipes(data.hits);
     console.log(data.hits);
   }
 
   useEffect(() =>{
     getRecipes();
-  }, [query, recipes]);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
+  }, [query, getRecipes]);// this [] contains the value that will update useeffect. useEffect will run every time this value is changed
 
 
 
